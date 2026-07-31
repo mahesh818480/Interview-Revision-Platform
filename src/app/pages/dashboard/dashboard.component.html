@@ -60,3 +60,39 @@
         </div>
     </div>
 </section>
+<section class="py-16 bg-whitesmoke">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-slate-800">
+                <span class="text-red-500">Top Inter</span>view Companies
+            </h2>
+            <p class="text-slate-500 mt-3">
+                Practice company-wise interview questions.
+            </p>
+        </div>
+        <div class="flex items-center">
+            <button (click)="previousCompany()"
+                class="previous_button w-12 h-12 rounded-full border-4 hover:bg-red-500 hover:text-white transition"
+                [disabled]="companyIndex==0">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+
+            <div class="grid grid-cols-4 gap-6 flex-1 mx-8">
+                @for(company of visibleCompanies; track company.name){
+                <div class="company_card hover:scale-110">
+                    <img [src]="company.logo" class="w-16 h-16 mx-auto object-contain">
+                    <h3 class="mt-5 text-xl font-bold">{{company.name}}</h3>
+                    <p class="mt-2 text-red-500 font-semibold">{{company.count}}+ Questions
+                    </p>
+                </div>
+                }
+
+            </div>
+            <button (click)="nextCompany()"
+                class="next_button w-12 h-12 rounded-full border hover:bg-red-500 hover:text-white transition"
+                [disabled]="companyIndex >= companies.length - 4">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+        </div>
+    </div>
+</section>
