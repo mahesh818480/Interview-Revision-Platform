@@ -1,96 +1,61 @@
 .hero {
-
-    height: calc(99vh - 70px);
-
+    height: calc(100vh - 70px);
     background-image: url('https://images.openai.com/static-rsc-4/6M6s5lp4fB6e4320N74n4RemvYlixVs8BVuf9w0r_zDZg2ZNyLEPgs9aATicsNsFlQYF48CoUuRmoP7m9UW-AWDJxrw423rCS9COn4foqw7pjklrW9dX4qBH11jRlnn6ksq1QMqe3x3YV92inMxxjc0zvNEDI8kp8FsvWl1D55pPgsdVUxfwBsSiGg7DCI7f?purpose=fullsize');
-
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
     position: relative;
-
+     margin-top:65px;
 }
 
 .overlay {
-
     width: 100%;
-
     height: 100%;
-
     background: linear-gradient(90deg, rgba(17, 24, 39, .88), rgba(17, 24, 39, .55), rgba(17, 24, 39, .25));
     display: flex;
-
     align-items: center;
-
 }
 
 .hero-content {
-
     width: 90%;
     padding-left: 80px;
-
     max-width: 1200px;
-
     margin: auto;
-
     color: white;
-
 }
 
 .hero h1 {
     text-shadow: 1px 2px #F44336;
     font-size: 60px;
-
     font-weight: bold;
-
     line-height: 1.1;
-
 }
 
 .hero p {
-
     margin-top: 20px;
-
     width: 550px;
-
     font-size: 18px;
-
     color: #ddd;
-
     line-height: 1.6;
 
 }
 
 .hero-buttons {
-
     margin-top: 30px;
-
     display: flex;
-
     gap: 20px;
-
 }
 
 .primary-btn {
-
     background: #ec472a15;
-
     color: white;
-
     border: none;
-
     padding: 15px 35px;
-
     border-radius: 8px;
-
     cursor: pointer;
     border: 2px solid white;
     font-size: 16px;
     transition: .3s;
-
 }
 
 .primary-btn:hover,
@@ -101,27 +66,16 @@
 }
 
 .secondary-btn {
-
     background: transparent;
-
     color: white;
-
     border: 2px solid white;
-
     padding: 15px 35px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
-}
-
-.technologie_practice {
-    background: linear-gradient(1deg, #666060b8, transparent);
 }
 
 .technologies_practice {
-    background: #f8fafc;
+    background: #eff3f8a8;
 }
 
 .marquee {
@@ -174,4 +128,16 @@
         transform: translateX(-50%);
     }
 
+}
+
+.company_card {
+    @apply border rounded-xl p-6 text-center hover:border-red-500 hover:shadow-lg transition cursor-pointer
+}
+
+.previous_button {
+    @apply disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-red-500 hover:text-white
+}
+
+.next_button {
+    @apply disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-red-500 hover:text-white
 }

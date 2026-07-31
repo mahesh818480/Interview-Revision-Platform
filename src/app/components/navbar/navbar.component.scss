@@ -5,11 +5,24 @@
 }
 
 .navbar {
-    background: #111827;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    left: 0;
+    width: 100%;
+    background: #111827;
+    transition: all .35s ease;
+    z-index: 9999;
+}
+
+.scrolled {
+    background: rgba(17, 24, 39, .85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.scrolled .container {
+    height: 60px;
 }
 
 .container {
