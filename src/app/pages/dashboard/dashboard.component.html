@@ -1,0 +1,62 @@
+<section class="hero">
+
+    <div class="overlay">
+
+        <div class="hero-content">
+
+            <h1>
+                Ace Your <br>
+                Frontend Interviews
+            </h1>
+
+            <p>
+                Practice Angular, JavaScript, TypeScript,
+                HTML, CSS and RxJS interview questions
+                asked by top companies.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+
+                    Browse Questions
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+
+                </button>
+
+                <button class="secondary-btn">
+
+                    Start Quiz
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-10 bg-slate-100 technologies_practice">
+
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-bold text-slate-800">
+                Technologies <span class="text-red-500"> You Can Practice</span>
+            </h2>
+            <p class="mt-3 text-slate-500">
+                Practice real interview questions by technology.
+            </p>
+        </div>
+        <div class="overflow-hidden">
+            <div class="marquee">
+                @for(question of technologies; track question.name){
+                <div class="tech-item">
+                    <h3>{{question.count}}+</h3>
+                    <p>{{question.name}}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

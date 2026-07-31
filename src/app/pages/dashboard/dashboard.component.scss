@@ -1,0 +1,177 @@
+.hero {
+
+    height: calc(99vh - 70px);
+
+    background-image: url('https://images.openai.com/static-rsc-4/6M6s5lp4fB6e4320N74n4RemvYlixVs8BVuf9w0r_zDZg2ZNyLEPgs9aATicsNsFlQYF48CoUuRmoP7m9UW-AWDJxrw423rCS9COn4foqw7pjklrW9dX4qBH11jRlnn6ksq1QMqe3x3YV92inMxxjc0zvNEDI8kp8FsvWl1D55pPgsdVUxfwBsSiGg7DCI7f?purpose=fullsize');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    position: relative;
+
+}
+
+.overlay {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(90deg, rgba(17, 24, 39, .88), rgba(17, 24, 39, .55), rgba(17, 24, 39, .25));
+    display: flex;
+
+    align-items: center;
+
+}
+
+.hero-content {
+
+    width: 90%;
+    padding-left: 80px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    color: white;
+
+}
+
+.hero h1 {
+    text-shadow: 1px 2px #F44336;
+    font-size: 60px;
+
+    font-weight: bold;
+
+    line-height: 1.1;
+
+}
+
+.hero p {
+
+    margin-top: 20px;
+
+    width: 550px;
+
+    font-size: 18px;
+
+    color: #ddd;
+
+    line-height: 1.6;
+
+}
+
+.hero-buttons {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+.primary-btn {
+
+    background: #ec472a15;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 35px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+    border: 2px solid white;
+    font-size: 16px;
+    transition: .3s;
+
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    background: #ed0606;
+    border: none;
+    border: 2px solid #ed0606;
+}
+
+.secondary-btn {
+
+    background: transparent;
+
+    color: white;
+
+    border: 2px solid white;
+
+    padding: 15px 35px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.technologie_practice {
+    background: linear-gradient(1deg, #666060b8, transparent);
+}
+
+.technologies_practice {
+    background: #f8fafc;
+}
+
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 18s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    min-width: 220px;
+    text-align: center;
+    margin-right: 25px;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    transition: .35s;
+    cursor: pointer;
+}
+
+.tech-item h3 {
+    color: #ef4444;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.tech-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.tech-item:hover {
+    border: 1px solid #ef4444;
+    background: white;
+    scale: 0.8;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}

@@ -1,0 +1,28 @@
+<header class="navbar">
+    <div class="container">
+        <div class="logo" routerLink="/">
+            <span class="logo-icon">🧠</span>
+            <div>
+                <h2>Interview<span class="highlight">Hub</span></h2>
+                <p>Practice • Learn • Crack Interviews</p>
+            </div>
+        </div>
+        <nav>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                Dashboard
+            </a>
+
+            <a routerLink="/questions" routerLinkActive="active">
+                Questions
+            </a>
+
+            <a routerLink="/companies" routerLinkActive="active">
+                Companies
+            </a>
+
+            <a routerLink="/quiz" routerLinkActive="active">
+                Quiz
+            </a>
+        </nav>
+    </div>
+</header>
