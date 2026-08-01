@@ -1,1 +1,63 @@
-<p>footer works!</p>
+<footer class="bg-[#111827] text-gray-300 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+                <div class="flex items-baseline">
+                    <h2 class="footer-title">Interview<span class="text-red-500">Hub</span></h2>
+                </div>
+                <p class="mt-6 text-gray-400 leading-8">
+                    Practice Angular, JavaScript, TypeScript,
+                    HTML, CSS and RxJS interview questions
+                    asked by top companies.
+                </p>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="space-y-4 mt-6">
+                    <li><a routerLink="/" class="footer-link"> Dashboard</a></li>
+                    <li><a routerLink="/questions" class="footer-link"> Questions</a></li>
+                    <li><a routerLink="/companies" class="footer-link">Companies</a></li>
+                    <li><a routerLink="/quiz" class="footer-link"> Quiz</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Technologies</h3>
+                <div class="flex flex-wrap gap-3 mt-6">
+                    @for(techno of technologies; track techno.name;){
+                    <span class="tech">{{techno.name}}</span>
+                    }
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact</h3>
+                <div class="space-y-5 mt-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-envelope text-red-500 mt-1"></i><span>{{gmail}}</span>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-phone text-red-500 mt-1"></i><span>+91 8184801541</span>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-location-dot text-red-500 mt-1"></i>
+                        <span> Hyderabad,Telangana,India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8">
+            <div class="flex justify-center gap-5">
+                <a href="#" class="social linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social github"><i class="fab fa-github"></i></a>
+                <a href="#" class="social facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social gmail"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p class="text-gray-400">© 2026 InterviewHub. All Rights Reserved.</p>
+            <p class="text-gray-400 mt-3 md:mt-0">Made with
+                <span class="text-red-500">❤</span>by Mahesh
+            </p>
+        </div>
+    </div>
+</footer>

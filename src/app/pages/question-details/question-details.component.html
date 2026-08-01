@@ -1,6 +1,6 @@
 <section class="min-h-screen bg-slate-50 py-10">
     <div class="max-w-5xl mx-auto px-6">
-        <button routerLink="/questions" (click)="goToQuestioPage()" class="text-red-500 hover:underline">
+        <button routerLink="/questions" (click)="goToQuestioPage()" class="text-red-600 hover:underline">
             ← Back to Questions
         </button>
         <div class="mt-6">
@@ -15,18 +15,18 @@
             </div>
         </div>
         <div class="bg-white rounded-xl p-6 mt-8 shadow-sm">
-            <h2 class="text-2xl font-semibold">Problem Statement</h2>
+            <h2 class="text-2xl font-semibold">Problem <span class="text-red-600">Statement</span> </h2>
             <p class="mt-4 text-gray-600">{{question.problem}}</p>
         </div>
         <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
-            <h2 class="text-2xl font-semibold">Explanation</h2>
+            <h2 class="text-2xl font-semibold">Explan<span class="text-red-600">ation</span></h2>
             <p class="mt-4 text-gray-600">
                 {{question.explanation}}
             </p>
         </div>
         <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
             <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-semibold">Solution</h2>
+                <h2 class="text-2xl font-semibold"><span class="text-red-600">Solu</span>tion</h2>
                 <button (click)="copyCode()"
                     class="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition">
                     <i class="fa-regular fa-copy"></i>
@@ -40,7 +40,7 @@
             </code></pre>
         </div>
         <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
-            <h2 class="text-2xl font-semibold">Output</h2>
+            <h2 class="text-2xl font-semibold">Out<span class="text-red-600">put</span></h2>
             <pre class="mt-4 bg-gray-100 p-4 rounded-lg">{{question.output}}</pre>
         </div>
     </div>
