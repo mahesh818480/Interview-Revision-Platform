@@ -3,3 +3,9 @@
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
+
+@if(showScrollTop){
+<button (click)="scrollToTop()" class="scroll-top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+}

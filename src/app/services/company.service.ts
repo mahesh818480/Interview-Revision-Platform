@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { COMPANIES } from '../data/company-data';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,7 @@ import { Injectable } from '@angular/core';
 export class CompanyService {
 
   constructor() { }
+  getCompanies() {
+    return COMPANIES;
+  }
 }

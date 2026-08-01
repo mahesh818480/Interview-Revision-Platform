@@ -1,0 +1,44 @@
+.company-card {
+    @apply bg-white rounded-2xl border border-gray-200 p-5 transition cursor-pointer;
+}
+
+.company-card:hover {
+    border-color: #ef4444;
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+}
+
+.tech-chip {
+    @apply px-3 py-1 rounded-full border border-gray-200 bg-gray-50 text-gray-700 text-sm transition;
+}
+
+.tech-chip:hover {
+    @apply bg-red-500 text-white border-red-500;
+}
+
+.view-btn {
+    color: rgb(239 68 68 / 80%);
+    @apply flex items-center gap-3 font-semibold transition;
+}
+
+.view-btn i {
+    transition: .3s;
+}
+
+.view-btn:hover {
+    @apply text-red-600;
+}
+
+.view-btn:hover i {
+    transform: translateX(6px);
+}
+.page-btn {
+    @apply px-4 py-2 rounded-lg border disabled:opacity-40 disabled:cursor-not-allowed hover:bg-red-500 hover:text-white transition;
+}
+.company_name {
+    color: rgb(30 41 59 / 58%);
+}
+
+.company_name:hover {
+    color: #000;
+}
