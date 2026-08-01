@@ -9,7 +9,11 @@
                 <span class="bg-red-100 text-red-600 px-4 py-1 rounded-full">
                     {{question.technology}}
                 </span>
-                <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full">
+                <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full" [ngClass]="{
+                            'bg-green-100 text-green-700': question.difficulty === 'Easy',
+                            'bg-yellow-100 text-yellow-700': question.difficulty === 'Medium',
+                            'bg-red-100 text-red-700': question.difficulty === 'Hard'
+                            }">
                     {{question.difficulty}}
                 </span>
             </div>

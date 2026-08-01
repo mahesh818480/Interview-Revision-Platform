@@ -11,3 +11,10 @@ export interface Question {
   timeComplexity: string;
   spaceComplexity: string;
 }
+export interface Company {
+  id: number;
+  name: string;
+  questions: number;
+  image: string;
+  technologies: string[];
+}

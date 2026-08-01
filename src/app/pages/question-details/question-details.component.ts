@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from '../../services/question.service';
 import { Question } from '../../models/question';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-question-details',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './question-details.component.html',
   styleUrl: './question-details.component.scss'
 })

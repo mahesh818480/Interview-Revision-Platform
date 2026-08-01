@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { QuestionService } from '../../services/question.service';
 import { Question } from '../../models/question';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MatIconModule, RouterLink, MatButtonModule],
+  imports: [MatIconModule, RouterLink, MatButtonModule, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-  technologies:any=[];
+  technologies: any = [];
   companies = [
     {
       name: 'TCS',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { QuestionService } from '../../services/question.service';
 import { Question } from '../../models/question';
 import { FormsModule } from '@angular/forms';
@@ -22,13 +22,19 @@ export class QuestionsComponent {
   currentPage = 1;
 
   pageSize = 5;
-  constructor(private questionService: QuestionService) { }
+  constructor(private questionService: QuestionService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.allQuestions = this.questionService.getQuestions();
     this.searchQst = this.allQuestions;
     this.technologies = this.questionService.getTechnologys();
     this.filteredQuestions = [...this.allQuestions];
+    this.activateRoute.queryParams.subscribe((params) => {
+      const company = params['company'];
+      if (company) {
+        this.filteredQuestions = this.allQuestions.filter((val) => val.companies.includes(company))
+      }
+    })
   }
   onSearchQuestion() {
     this.applyFilters();
