@@ -1,0 +1,47 @@
+<section class="min-h-screen bg-slate-50 py-10">
+    <div class="max-w-5xl mx-auto px-6">
+        <button routerLink="/questions" (click)="goToQuestioPage()" class="text-red-500 hover:underline">
+            ← Back to Questions
+        </button>
+        <div class="mt-6">
+            <h1 class="text-4xl font-bold text-gray-800">{{question.title}}</h1>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-red-100 text-red-600 px-4 py-1 rounded-full">
+                    {{question.technology}}
+                </span>
+                <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full">
+                    {{question.difficulty}}
+                </span>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 mt-8 shadow-sm">
+            <h2 class="text-2xl font-semibold">Problem Statement</h2>
+            <p class="mt-4 text-gray-600">{{question.problem}}</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
+            <h2 class="text-2xl font-semibold">Explanation</h2>
+            <p class="mt-4 text-gray-600">
+                {{question.explanation}}
+            </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl font-semibold">Solution</h2>
+                <button (click)="copyCode()"
+                    class="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition">
+                    <i class="fa-regular fa-copy"></i>
+                    {{ copied ? 'Copied' : 'Copy Code' }}
+
+                </button>
+            </div>
+
+            <pre class="mt-5 bg-slate-900 text-green-300 p-5 rounded-lg overflow-auto"><code>
+                {{question.code}}
+            </code></pre>
+        </div>
+        <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
+            <h2 class="text-2xl font-semibold">Output</h2>
+            <pre class="mt-4 bg-gray-100 p-4 rounded-lg">{{question.output}}</pre>
+        </div>
+    </div>
+</section>
