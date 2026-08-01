@@ -5,7 +5,6 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-     margin-top:65px;
 }
 
 .overlay {
@@ -140,4 +139,12 @@
 
 .next_button {
     @apply disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-red-500 hover:text-white
+}
+
+.companies {
+    background: whitesmoke;
+}
+
+.prequently_questions {
+    background: aliceblue;
 }

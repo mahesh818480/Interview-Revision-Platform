@@ -3,6 +3,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { QuestionsComponent } from './pages/questions/questions.component';
 import { CompaniesComponent } from './pages/companies/companies.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { QuestionDetailsComponent } from './pages/question-details/question-details.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,10 @@ export const routes: Routes = [
     {
         path: 'quiz',
         component: QuizComponent
+    },
+    {
+        path: 'questions-details/:id',
+        component: QuestionDetailsComponent
     },
     {
         path: '**',
