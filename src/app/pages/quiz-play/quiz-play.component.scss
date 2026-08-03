@@ -1,0 +1,57 @@
+.option-btn {
+    @apply w-full text-left border border-gray-300 rounded-xl p-5 font-medium transition;
+}
+
+.option-btn:hover {
+    @apply border-red-500 bg-red-50;
+}
+
+.option-btn.active {
+    @apply bg-red-500 text-white border-red-500;
+}
+
+.nav-btn {
+    @apply px-6 py-3 rounded-xl border hover:bg-gray-100;
+}
+
+.next-btn {
+    @apply px-6 py-3 rounded-xl bg-red-500 text-white;
+}
+
+.next-btn:hover {
+    @apply bg-red-600;
+}
+
+.question_name {
+    margin-top: 20px;
+}
+
+.option {
+    @apply border border-gray-300 rounded-xl p-4 cursor-pointer transition;
+}
+
+.option:hover {
+    @apply border-red-500;
+}
+
+.selected {
+    border: 2px solid #ef4444;
+    background: #fef2f2;
+}
+
+.letter {
+    @apply w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center font-bold;
+}
+
+.selected .letter {
+    background: #ef4444;
+    color: white;
+}
+
+.disabled {
+    @apply px-6 py-3 rounded-xl bg-red-300 text-white;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+}

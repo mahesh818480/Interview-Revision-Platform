@@ -1,0 +1,21 @@
+.quiz-select {
+    @apply w-full h-14 rounded-xl border border-gray-300 px-4 outline-none bg-white;
+    transition: .3s;
+}
+
+.quiz-select:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, .15);
+}
+
+.start-btn {
+    @apply w-full mt-10 h-14 rounded-xl text-white text-lg font-semibold;
+    background: #ef4444;
+    transition: .3s;
+}
+
+.start-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, .3);
+}
