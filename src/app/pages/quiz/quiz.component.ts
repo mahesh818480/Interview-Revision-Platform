@@ -16,7 +16,7 @@ export class QuizComponent {
     'JavaScript',
     'RxJS'
   ];
-  questionCounts = [5, 10, 15];
+  questionCounts = [5, 10, 15, 20];
   difficulties = [
     'Easy',
     'Medium',
@@ -34,6 +34,5 @@ export class QuizComponent {
         difficulty: this.difficulty
       }
     });
-    console.log(this.questionCount, '+++++')
   }
 }

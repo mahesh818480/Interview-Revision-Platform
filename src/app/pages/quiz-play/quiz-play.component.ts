@@ -14,7 +14,6 @@ import { RXJS_QUIZ_QUESTIONS } from '../../data/rxjs-data';
   styleUrl: './quiz-play.component.scss'
 })
 export class QuizPlayComponent {
-  allQuestions = [...QUIZ_DATA, ...JAVASCRIPT_QUIZ_DATA, ...RXJS_QUIZ_QUESTIONS];
   quiz: Quiz[] = [];
   showResult = false;
   score = 0;
@@ -23,27 +22,60 @@ export class QuizPlayComponent {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.route.queryParams.subscribe(params => {
       const technology = params['technology'];
       const difficulty = params['difficulty'];
-      const count = params['count'];
-      let filtered = [...this.allQuestions];
-      console.log(technology, difficulty, count, filtered, '===>>>')
-      filtered = filtered.filter(q =>
-        q.technology === technology
-      );
-      filtered = filtered.sort(() => Math.random() - 0.5);
-      this.quiz = filtered.slice(0, count);
-      console.log(filtered, '===>><<', this.quiz)
-      if (filtered.length < count) {
-        this.quiz = filtered;
-      } else {
-        this.quiz = filtered.slice(0, count);
-      }
-    });
-  }
+      const count = +params['count'];
 
+      let technologyQuestions: any[] = [];
+
+      switch (technology) {
+        case 'Angular':
+          technologyQuestions = [...QUIZ_DATA];
+          break;
+
+        case 'JavaScript':
+          technologyQuestions = [...JAVASCRIPT_QUIZ_DATA];
+          break;
+
+        case 'RxJS':
+          technologyQuestions = [...RXJS_QUIZ_QUESTIONS];
+          break;
+
+      }
+
+      // Selected difficulty
+      let difficultyQuestions = technologyQuestions.filter(
+        q => q.difficulty === difficulty
+      );
+
+      // Other difficulties
+      let otherQuestions = technologyQuestions.filter(
+        q => q.difficulty !== difficulty
+      );
+
+      difficultyQuestions = this.shuffle(difficultyQuestions);
+      otherQuestions = this.shuffle(otherQuestions);
+
+      if (difficultyQuestions.length < count) {
+        const remaining = count - difficultyQuestions.length;
+        difficultyQuestions = [
+          ...difficultyQuestions,
+          ...otherQuestions.slice(0, remaining)
+        ];
+      }
+      difficultyQuestions = this.shuffle(difficultyQuestions);
+      this.quiz = difficultyQuestions.slice(0, count);
+    });
+
+  }
+  shuffle(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
   selectOption(index: number) {
     const questionId = this.currentQuestion.id;
     this.selectedAnswers[questionId] = index;
@@ -92,6 +124,6 @@ export class QuizPlayComponent {
     this.selectedAnswers = {};
   }
   get progress(): number {
-    return ((this.currentIndex) / this.quiz.length) * 100;
+    return ((this.currentIndex + 1) / this.quiz.length) * 100;
   }
 }
