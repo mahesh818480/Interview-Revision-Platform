@@ -1,11 +1,10 @@
 import { Company } from "../models/question";
 
 export const COMPANIES: Company[] = [
-
   {
     id: 1,
     name: 'TCS',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdi4msNXV8dKX33Web9hxys6gTkXU3gnODRLYiGItvGA&s=10',
+    image: './company-logs/tcs.jpg',
     questions: 120,
     technologies: ['Angular', 'JavaScript', 'HTML']
   },
@@ -13,7 +12,7 @@ export const COMPANIES: Company[] = [
   {
     id: 2,
     name: 'Infosys',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQLcpQhnVQIKj_uqUwwgqgK9hGKgn55HS-6OCwdxzWA&s',
+    image: './company-logs/infosys.png',
     questions: 95,
     technologies: ['Angular', 'TypeScript']
   },
@@ -21,7 +20,7 @@ export const COMPANIES: Company[] = [
   {
     id: 3,
     name: 'Accenture',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfrRXeix7S4IjgxTE_4D3h-eYC_rSLGMmdMgbugukpg&s=10',
+    image: './company-logs/accenture.png',
     questions: 110,
     technologies: ['Angular', 'RxJS']
   },
@@ -29,7 +28,7 @@ export const COMPANIES: Company[] = [
   {
     id: 4,
     name: 'Capgemini',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUNb1ZToZg9VJsMsp9zq-kSgXu11J4-NM1tCv9b4WXtw&s=10',
+    image: './company-logs/capgemini.png',
     questions: 88,
     technologies: ['JavaScript', 'CSS']
   },
@@ -37,7 +36,7 @@ export const COMPANIES: Company[] = [
   {
     id: 5,
     name: 'Cognizant',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjM6DQYJ7r0IvW9M-nnUVuceOfZcWIyyhxNmiDg0dMIHHIFgGFhlc0Ils&s=10',
+    image: './company-logs/congnigent.jpg',
     questions: 104,
     technologies: ['Angular', 'RxJS']
   },
@@ -45,7 +44,7 @@ export const COMPANIES: Company[] = [
   {
     id: 6,
     name: 'IBM',
-    image: 'assets/company-logos/ibm.png',
+    image: './company-logs/image.png',
     questions: 73,
     technologies: ['Angular', 'JavaScript']
   },
@@ -53,7 +52,7 @@ export const COMPANIES: Company[] = [
   {
     id: 7,
     name: 'Wipro',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTltJNrW4ozmXiF0oqVki84niaYcp_7QgeC0W4tkHT8Fg&s',
+    image: './company-logs/wipro.png',
     questions: 81,
     technologies: ['HTML', 'CSS']
   },
@@ -61,7 +60,7 @@ export const COMPANIES: Company[] = [
   {
     id: 8,
     name: 'Deloitte',
-    image: 'assets/company-logos/deloitte.png',
+    image: './company-logs/deloitte.png',
     questions: 69,
     technologies: ['Angular', 'TypeScript']
   }

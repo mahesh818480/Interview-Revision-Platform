@@ -60,9 +60,9 @@
             <div class="grid grid-cols-4 gap-6 flex-1 mx-8">
                 @for(company of visibleCompanies; track company.name){
                 <div class="company_card hover:scale-110" routerLink="/companies">
-                    <img [src]="company.logo" class="w-16 h-16 mx-auto object-contain">
+                    <img [src]="company.image" class="w-16 h-16 mx-auto object-contain">
                     <h3 class="mt-5 text-xl font-bold">{{company.name}}</h3>
-                    <p class="mt-2 text-red-600 font-semibold">{{company.count}}+ Questions
+                    <p class="mt-2 text-red-600 font-semibold">{{company.questions}}+ Questions
                     </p>
                 </div>
                 }
