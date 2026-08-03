@@ -36,7 +36,6 @@
     font-size: 18px;
     color: #ddd;
     line-height: 1.6;
-
 }
 
 .hero-buttons {
@@ -86,6 +85,7 @@
 .marquee:hover {
     animation-play-state: paused;
 }
+
 
 .tech-item {
     min-width: 220px;
@@ -147,4 +147,102 @@
 
 .prequently_questions {
     background: aliceblue;
+}
+
+.company_card {
+    min-height: 170px;
+}
+
+@media(max-width:768px) {
+    .hero {
+        height: auto;
+        background-position: 65% center;
+    }
+
+    .overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        width: 100%;
+        font-size: 16px;
+        margin: 20px auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .tech-item:hover {
+        scale: 1;
+    }
+
+    .technologies_practice {
+        padding: 50px 0;
+    }
+
+    .company_card {
+        min-height: 150px;
+    }
+
+    .previous_button,
+    .next_button {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .tech-item {
+        min-width: 140px;
+        margin-right: 15px;
+        padding: 15px;
+    }
+
+    .tech-item h3 {
+        font-size: 28px;
+    }
+
+    .tech-item p {
+        font-size: 15px;
+    }
+
+    .marquee {
+        animation: scrollLeft 25s linear infinite;
+    }
+
+    .prequently_questions {
+        .title_names {
+            font-size: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    }
+
+    .technologies_practice h2 {
+        font-size: 30px;
+    }
+
+    .technologies_practice p {
+        font-size: 15px;
+    }
 }

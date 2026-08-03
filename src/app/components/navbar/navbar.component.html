@@ -11,19 +11,20 @@
             <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
         </button>
         <nav [class.show]="isMenuOpen">
-            <a  (click)="isMenuOpen=false"routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a (click)="isMenuOpen=false" routerLink="/" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
                 Dashboard
             </a>
 
-            <a  (click)="isMenuOpen=false"routerLink="/questions" routerLinkActive="active">
+            <a (click)="isMenuOpen=false" routerLink="/questions" routerLinkActive="active">
                 Questions
             </a>
 
-            <a  (click)="isMenuOpen=false"routerLink="/companies" routerLinkActive="active">
+            <a (click)="isMenuOpen=false" routerLink="/companies" routerLinkActive="active">
                 Companies
             </a>
 
-            <a  (click)="isMenuOpen=false"routerLink="/quiz" routerLinkActive="active">
+            <a (click)="isMenuOpen=false" routerLink="/quiz" routerLinkActive="active">
                 Quiz
             </a>
         </nav>
