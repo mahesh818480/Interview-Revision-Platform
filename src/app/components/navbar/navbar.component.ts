@@ -1,8 +1,5 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,16 +15,15 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   isScrolled = false;
-  isMenuOpen=false;
+  isMenuOpen = false;
 
   @HostListener('window:scroll')
   onWindowScroll() {
     this.isScrolled = window.scrollY > 30;
   }
 
-toggleMenu(){
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
 
-   this.isMenuOpen=!this.isMenuOpen;
-
-}
+  }
 }
