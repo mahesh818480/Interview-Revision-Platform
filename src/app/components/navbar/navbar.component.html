@@ -7,20 +7,23 @@
                 <p>Practice • Learn • Crack Interviews</p>
             </div>
         </div>
-        <nav>
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button class="menu-btn" (click)="toggleMenu()">
+            <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+        </button>
+        <nav [class.show]="isMenuOpen">
+            <a  (click)="isMenuOpen=false"routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                 Dashboard
             </a>
 
-            <a routerLink="/questions" routerLinkActive="active">
+            <a  (click)="isMenuOpen=false"routerLink="/questions" routerLinkActive="active">
                 Questions
             </a>
 
-            <a routerLink="/companies" routerLinkActive="active">
+            <a  (click)="isMenuOpen=false"routerLink="/companies" routerLinkActive="active">
                 Companies
             </a>
 
-            <a routerLink="/quiz" routerLinkActive="active">
+            <a  (click)="isMenuOpen=false"routerLink="/quiz" routerLinkActive="active">
                 Quiz
             </a>
         </nav>
