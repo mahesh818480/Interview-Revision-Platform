@@ -18,3 +18,11 @@ export interface Company {
   image: string;
   technologies: string[];
 }
+export interface Quiz {
+  id:number;
+  technology:string;
+  difficulty:string;
+  question:string;
+  options:string[];
+  answer:number;
+}
