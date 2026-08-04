@@ -12,13 +12,13 @@
     @apply px-3 py-1 rounded-full border border-gray-200 bg-gray-50 text-gray-700 text-sm transition;
 }
 
-.tech-chip:hover {
+.tech-chiphover {
     @apply bg-red-500 text-white border-red-500;
 }
 
 .view-btn {
     color: rgb(239 68 68 / 80%);
-    @apply flex items-center gap-3 font-semibold transition;
+    @apply flex items-center justify-between w-full font-semibold transition;
 }
 
 .view-btn i {
@@ -32,13 +32,35 @@
 .view-btn:hover i {
     transform: translateX(6px);
 }
+
 .page-btn {
     @apply px-4 py-2 rounded-lg border disabled:opacity-40 disabled:cursor-not-allowed hover:bg-red-500 hover:text-white transition;
 }
+
 .company_name {
     color: rgb(30 41 59 / 58%);
 }
 
 .company_name:hover {
     color: #000;
+}
+
+@media(max-width:768px) {
+    .company-card {
+        padding: 18px;
+    }
+
+    .company_name {
+        font-size: 24px;
+    }
+
+    .tech-chip {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .page-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
 }

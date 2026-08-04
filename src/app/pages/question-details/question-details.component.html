@@ -1,51 +1,57 @@
-<section class="min-h-screen bg-slate-50 py-10">
-    <div class="max-w-5xl mx-auto px-6">
-        <button routerLink="/questions" (click)="goToQuestioPage()" class="text-red-600 hover:underline">
+<section class="min-h-screen bg-slate-50 py-8 sm:py-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <button routerLink="/questions" (click)="goToQuestioPage()"
+            class="text-red-600 hover:underline text-sm sm:text-base">
             ← Back to Questions
         </button>
         <div class="mt-6">
-            <h1 class="text-4xl font-bold text-gray-800">{{question.title}}</h1>
-            <div class="flex gap-3 mt-4">
-                <span class="bg-red-100 text-red-600 px-4 py-1 rounded-full">
+            <h1 class="!text-2xl md:!text-4xl lg:text-4xl font-bold text-gray-800 leading-tight">
+                {{question.title}}
+            </h1>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-red-100 text-red-600 px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm">
                     {{question.technology}}
                 </span>
-                <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full" [ngClass]="{
-                            'bg-green-100 text-green-700': question.difficulty === 'Easy',
-                            'bg-yellow-100 text-yellow-700': question.difficulty === 'Medium',
-                            'bg-red-100 text-red-700': question.difficulty === 'Hard'
-                            }">
-                    {{question.difficulty}}
-                </span>
+                <span class="px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm" [ngClass]="{
+                    'bg-green-100 text-green-700': question.difficulty === 'Easy',
+                    'bg-yellow-100 text-yellow-700': question.difficulty === 'Medium',
+                    'bg-red-100 text-red-700': question.difficulty === 'Hard'
+                    }">
+                    {{question.difficulty}}</span>
             </div>
         </div>
-        <div class="bg-white rounded-xl p-6 mt-8 shadow-sm">
-            <h2 class="text-2xl font-semibold">Problem <span class="text-red-600">Statement</span> </h2>
-            <p class="mt-4 text-gray-600">{{question.problem}}</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
-            <h2 class="text-2xl font-semibold">Explan<span class="text-red-600">ation</span></h2>
-            <p class="mt-4 text-gray-600">
-                {{question.explanation}}
+        <div class="bg-white rounded-xl p-4 sm:p-6 mt-8 shadow-sm">
+            <h2 class="!text-2xl md:!text-4xl font-semibold">
+                📄 Problem <span class="text-red-600">Statement</span>
+            </h2>
+            <p class="mt-4 text-gray-600 text-sm sm:text-base leading-7">
+                {{question.problem}}
             </p>
         </div>
-        <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
-            <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-semibold"><span class="text-red-600">Solu</span>tion</h2>
-                <button (click)="copyCode()"
-                    class="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition">
-                    <i class="fa-regular fa-copy"></i>
-                    {{ copied ? 'Copied' : 'Copy Code' }}
-
+        <div class="bg-white rounded-xl p-4 sm:p-6 mt-6 shadow-sm">
+            <h2 class="!text-2xl md:!text-4xl font-semibold">
+                💡 Explan<span class="text-red-600">ation</span>
+            </h2>
+            <p class="mt-4 text-gray-600 text-sm sm:text-base leading-7">{{question.explanation}}
+            </p>
+        </div>
+        <div class="bg-white rounded-xl p-4 sm:p-6 mt-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                <h2 class="!text-2xl md:!text-4xl font-semibold">
+                    💻 <span class="text-red-600">Solu</span>tion</h2>
+                <button (click)="copyCode()" class="copyCode">
+                    <i class="fa-regular fa-copy"></i>{{ copied ? 'Copied' : 'Copy Code' }}
                 </button>
             </div>
+            <pre class="mt-5 bg-slate-900 text-green-300 p-4 sm:p-5 rounded-lg overflow-x-auto text-xs sm:text-sm">
+                <code>{{question.code}}</code></pre>
 
-            <pre class="mt-5 bg-slate-900 text-green-300 p-5 rounded-lg overflow-auto"><code>
-                {{question.code}}
-            </code></pre>
         </div>
-        <div class="bg-white rounded-xl p-6 mt-6 shadow-sm">
-            <h2 class="text-2xl font-semibold">Out<span class="text-red-600">put</span></h2>
-            <pre class="mt-4 bg-gray-100 p-4 rounded-lg">{{question.output}}</pre>
+        <div class="bg-white rounded-xl p-4 sm:p-6 mt-6 shadow-sm">
+            <h2 class="!text-2xl md:!text-4xl font-semibold">
+                🖥 Out<span class="text-red-600">put</span>
+            </h2>
+            <pre class="mt-4 bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{{question.output}}</pre>
         </div>
     </div>
 </section>

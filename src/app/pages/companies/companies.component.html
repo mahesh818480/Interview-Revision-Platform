@@ -1,61 +1,64 @@
-<section class="bg-slate-50 min-h-screen py-12">
-    <div class="max-w-6xl mx-auto px-6">
+<section class="bg-slate-50 min-h-screen py-10 md:py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
         <div class="text-center">
-            <h1 class="text-4xl font-bold text-slate-800">Top <span class="text-red-500">Companies</span>
+            <h1 class="!text-2xl md:!text-5xl font-bold text-slate-800">
+                Top <span class="text-red-500">Companies</span>
             </h1>
-            <p class="mt-3 text-slate-500">Practice interview questions asked by top companies.</p>
+            <p class="mt-3 text-sm md:text-base text-slate-500">
+                Practice interview questions asked by top companies.
+            </p>
         </div>
-        <div class="max-w-lg mx-auto mt-10 mb-12 relative">
+        <div class="max-w-lg mx-auto mt-8 md:mt-10 mb-10 md:mb-12 relative">
             <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            <input [(ngModel)]="search" (keyup)="onSearch()" type="text" placeholder="Search company..." class="w-full h-14 rounded-xl border border-gray-300
-                       pl-14 pr-5 outline-none
-                   focus:border-red-500 transition">
+            <input [(ngModel)]="search" (keyup)="onSearch()" type="text" placeholder="Search company..." class="w-full h-12 md:h-14 rounded-xl border border-gray-300
+                       pl-12 md:pl-14 pr-5 outline-none
+                       focus:border-red-500 transition">
         </div>
         @if(filteredCompanies.length===0){
         <div class="text-center py-20">
-            <i class="fa-solid fa-building text-6xl text-gray-300"></i>
-            <h2 class="mt-6 text-2xl font-bold">No Companies Found</h2>
+            <i class="fa-solid fa-building text-5xl md:text-6xl text-gray-300"></i>
+            <h2 class="mt-5 text-xl md:text-2xl font-bold">No Companies Found</h2>
             <p class="text-gray-500 mt-2">Try another company name.</p>
         </div>
         }
         @else{
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
             @for(company of paginatedCompanies;track company.id){
             <div class="company-card">
-                <div class="flex justify-between items-center">
-                    <div class="w-14 h-14 rounded-xl border bg-white flex items-center justify-center p-2">
+                <div class="flex justify-between items-start">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-xl border bg-white flex items-center justify-center p-2">
                         <img [src]="company.image" [alt]="company.name" class="w-full h-full object-contain">
                     </div>
-                    <div class="company_name text-2xl font-bold text-slate-800">{{company.name}}</div>
                     <div class="text-right">
-                        <div class="bg-red-50 text-red-500 text-sm font-semibold px-4 py-2 rounded-full">
+                        <div class="bg-red-50 text-red-500 text-xs md:text-sm font-semibold px-3 py-2 rounded-full">
                             {{company.questions}}+
                         </div>
-                        <p class="m-0 text-xs text-gray-400">Questions</p>
+                        <p class="text-xs text-gray-400">Questions</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-2 mt-5">
+                <h2 class="company_name text-xl md:text-2xl font-bold mt-4">{{company.name}}</h2>
+                <div class="flex flex-wrap gap-2 mt-4">
                     @for(tech of company.technologies;track tech){
                     <span class="tech-chip">{{tech}}</span>
                     }
                 </div>
-                <div class="border-t my-6"></div>
-                <button class="view-btn" (click)="viewQuestion(company.name)">View Questions
+                <div class="border-t my-5"></div>
+                <button class="view-btn">
+                    <span (click)="viewQuestion(company.name)">View Questions</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
             }
         </div>
-        <div class="flex justify-center items-center gap-2 mt-12">
+        <div class="flex flex-wrap justify-center items-center gap-2 mt-10">
             <button (click)="previousPage()" [disabled]="currentPage===1" class="page-btn">Previous</button>
             @for(page of pageNumbers;track page){
-            <button (click)="currentPage=page" [ngClass]="
+            <button (click)="currentPage=page" class="w-9 h-9 md:w-10 md:h-10 rounded-lg" [ngClass]="
                 currentPage===page
                 ?'bg-red-500 text-white'
                 :'border'
-                " class="w-10 h-10 rounded-lg">
-
-                {{page}}</button>
+                ">{{page}}</button>
             }
             <button (click)="nextPage()" [disabled]="currentPage===totalPages" class="page-btn">Next</button>
         </div>

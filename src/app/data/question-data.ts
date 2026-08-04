@@ -9,18 +9,19 @@ export const QUESTIONS: Question[] = [
     companies: ['Infosys', 'TCS', 'Accenture'],
     problem: 'Create a search input that filters a list of employees in real time using Angular.',
     explanation: 'Use ngModel or Reactive Forms and filter the array using the input value.',
-    code: `employees = [
+    code: `
+          employees = [
             { id: 1, name: 'Mahesh' },
             { id: 2, name: 'Ravi' },
             { id: 3, name: 'Arjun' }
-            ];
+           ];
 
             searchText = '';
 
             get filteredEmployees() {
-            return this.employees.filter(emp =>
-                emp.name.toLowerCase().includes(this.searchText.toLowerCase())
-            );
+              return this.employees.filter(emp =>
+                  emp.name.toLowerCase().includes(this.searchText.toLowerCase())
+              );
             }`,
     output: 'Displays only matching employees.',
     timeComplexity: 'O(n)',
@@ -34,8 +35,10 @@ export const QUESTIONS: Question[] = [
     companies: ['Capgemini', 'Wipro', 'Infosys'],
     problem: 'Remove duplicate objects based on id.',
     explanation: 'Use filter() with findIndex() to keep only unique ids.',
-    code: `const result = users.filter((obj,index,self) =>
-                    index === self.findIndex(item => item.id === obj.id));`,
+    code: `
+    const result = users.filter((obj,index,self) =>
+                  index === self.findIndex(item => item.id === obj.id));
+    `,
     output: '[{id:1},{id:2},{id:3}]',
     timeComplexity: 'O(n²)',
     spaceComplexity: 'O(1)'
@@ -48,18 +51,18 @@ export const QUESTIONS: Question[] = [
     companies: ['EPAM', 'LTIMindtree', 'Deloitte'],
     problem: 'Call an API only after the user stops typing for 300ms.',
     explanation: 'Use RxJS Subject with debounceTime() and switchMap().',
-    code: `search$ = new Subject<string>();
+    code: `
+     search$ = new Subject<string>();
 
-                ngOnInit(){
-                this.search$
-                .pipe(
-                debounceTime(300),
-                distinctUntilChanged()
-                )
-                .subscribe(value=>{
-                console.log(value);
-                });
-                }`,
+      ngOnInit() {
+        this.search$
+          .pipe(debounceTime(300), distinctUntilChanged())
+          .subscribe((value) => {
+            console.log(value);
+          });
+      }
+    
+    `,
     output: 'API is called only after typing stops.',
     timeComplexity: 'O(n)',
     spaceComplexity: 'O(1)'
@@ -134,15 +137,17 @@ export const QUESTIONS: Question[] = [
     companies: ['Cognizant', 'MotherSon', 'Dhanush', 'Virtusa'],
     problem: 'Create a dynamic form where users can add multiple skills.',
     explanation: 'Use FormArray to dynamically add and remove controls.',
-    code: `skills=this.fb.array([]);
+    code: `
+    skills = this.fb.array([]);
 
-                addSkill(){
-                this.skills.push(this.fb.control(''));
-                }
+    addSkill(){
+      this.skills.push(this.fb.control(''));
+    }
 
-                removeSkill(index:number){
-                this.skills.removeAt(index);
-                }`,
+    removeSkill(index: number){
+      this.skills.removeAt(index);
+    }
+                `,
     output: 'Users can dynamically add or remove skill fields.',
     timeComplexity: 'O(1)',
     spaceComplexity: 'O(n)'
@@ -155,33 +160,35 @@ export const QUESTIONS: Question[] = [
     companies: ['Cognizant', 'Accenture', 'Infosys', 'IBM', 'Stag Innovations', 'Accenture', 'Wipro', 'Deloitte'],
     problem: 'groups objects by the name property and converts the array into an object.',
     explanation: 'This code groups array objects by the name property and transforms the array into an object where each key is a name and the value is an array of matching objects.',
-    code: `  data = [
-                        { id: 1, name: "Mahesh" },
-                        { id: 2, name: "Arjun" },
-                        { id: 2, name: "Arjun" },
-                        { id: 1, name: "Mahesh" }
-                    ];
-       ngOnInit() {
-          const arrayObject = this.data.reduce((acc, item) => {
-              if (!acc[item.name]) {
-                acc[item.name] = [];
-              }
-              acc[item.name].push({
-                id: item.id,
-              });
-              return acc;
-            }, {});
+    code: `
+        data = [
+        { id: 1, name: 'Mahesh' },
+        { id: 2, name: 'Arjun' },
+        { id: 2, name: 'Arjun' },
+        { id: 1, name: 'Mahesh' },
+      ];
+      ngOnInit() {
+        const arrayObject = this.data.reduce((acc, item) => {
+          if (!acc[item.name]) {
+            acc[item.name] = [];
+          }
+          acc[item.name].push({
+            id: item.id,
+          });
+          return acc;
+        }, {});
 
-            // Using ForEach*** Altranative
-            let result = {};
-              this.data.forEach((val) => {
-                if (!result[val.name]) {
-                  result[val.name] = [];
-                }
-                result[val.name].push(val);
-              });
-              console.log(result);
-       }`,
+        // Using ForEach*** Altranative
+        let result = {};
+        this.data.forEach((val) => {
+          if (!result[val.name]) {
+            result[val.name] = [];
+          }
+          result[val.name].push(val);
+        });
+        console.log(result);
+      }
+    `,
     output: `{
             Mahesh: [
                 { id: 1 },
@@ -295,19 +302,19 @@ export const QUESTIONS: Question[] = [
     problem: 'Generate the Fibonacci series up to a specified number of terms using a for loop.',
     explanation: 'Start with the first two numbers (0 and 1), then generate each next number by adding the previous two numbers.',
     code: ` 
-        fibonacci: number[] = [];
-           ngOnInit() {
-              let first = 0;
-              let second = 1;
-              this.fibonacci = [first, second];
-              for (let i = 1; i <= 10; i++) {
-                let next = first+second;
-                this.fibonacci.push(next);
-                first = second;
-                second = next;
-              }
-              console.log(this.fibonacci, 'fibonacci');
-            }`,
+          fibonacci: number[] = [];
+          ngOnInit() {
+            let first = 0;
+            let second = 1;
+            this.fibonacci = [first, second];
+            for (let i = 1; i <= 10; i++) {
+              let next = first + second;
+              this.fibonacci.push(next);
+              first = second;
+              second = next;
+            }
+            console.log(this.fibonacci, 'fibonacci');
+          }`,
 
     output: `Displays the Fibonacci sequence where each number is the sum of the previous two numbers."
 
@@ -509,14 +516,14 @@ export const QUESTIONS: Question[] = [
         duplicates = [10, 30, 20, 10, 40, 30, 60];
         arr = [];
 
-      ngOnInit(){
-        for (let data of this.duplicates) {
-          if (!this.arr.includes(data)) {
-            this.arr.push(data);
-             }
-          }
-      console.log(this.arr)
-      }`,
+        ngOnInit(){
+          for (let data of this.duplicates) {
+            if (!this.arr.includes(data)) {
+              this.arr.push(data);
+              }
+            }
+        console.log(this.arr)
+        }`,
 
     output: `
        [10, 30, 20, 40, 60]
