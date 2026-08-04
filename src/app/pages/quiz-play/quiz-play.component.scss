@@ -1,57 +1,63 @@
-.option-btn {
-    @apply w-full text-left border border-gray-300 rounded-xl p-5 font-medium transition;
+.option {
+    @apply border border-gray-300 rounded-xl p-4 cursor-pointer transition;
 }
 
-.option-btn:hover {
-    @apply border-red-500 bg-red-50;
+.option:hover {
+    @apply border-[rgb(144_230_158)/0.54] bg-[#4fae5246];
 }
 
-.option-btn.active {
-    @apply bg-red-500 text-white border-red-500;
+.selected {
+    border: 2px solid #169449d1;
+    background: #319b448a;
+}
+
+.letter {
+    @apply w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center font-bold flex-shrink-0;
+}
+
+.selected .letter {
+    background: #1f640b;
+    color: white;
 }
 
 .nav-btn {
-    @apply px-6 py-3 rounded-xl border hover:bg-gray-100;
+    @apply py-3 rounded-xl border transition;
+}
+
+.nav-btn:hover {
+    @apply bg-gray-100;
 }
 
 .next-btn {
-    @apply px-6 py-3 rounded-xl bg-red-500 text-white;
+    @apply py-3 rounded-xl bg-red-500 text-white transition;
 }
 
 .next-btn:hover {
     @apply bg-red-600;
 }
 
-.question_name {
-    margin-top: 20px;
-}
-
-.option {
-    @apply border border-gray-300 rounded-xl p-4 cursor-pointer transition;
-}
-
-.option:hover {
-    @apply border-red-500;
-}
-
-.selected {
-    border: 2px solid #ef4444;
-    background: #fef2f2;
-}
-
-.letter {
-    @apply w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center font-bold;
-}
-
-.selected .letter {
-    background: #ef4444;
-    color: white;
-}
-
 .disabled {
-    @apply px-6 py-3 rounded-xl bg-red-300 text-white;
+    @apply py-3 rounded-xl bg-red-300 text-white cursor-not-allowed;
 }
 
-.disabled:hover {
-    cursor: not-allowed;
+@media(max-width:768px) {
+    .option {
+        padding: 14px;
+    }
+
+    .letter {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .option p {
+        font-size: 15px;
+    }
+
+    .nav-btn,
+    .next-btn,
+    .disabled {
+        font-size: 15px;
+    }
 }

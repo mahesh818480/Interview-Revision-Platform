@@ -25,6 +25,9 @@ export class QuizComponent {
   selectedTechnology = 'Angular';
   questionCount = 10;
   difficulty = 'Easy';
+  showTechnology = false;
+  showQuestionCount = false;
+  showDifficulty = false;
   constructor(private router: Router) { }
   startQuiz() {
     this.router.navigate(['/quiz/play'], {
@@ -34,5 +37,19 @@ export class QuizComponent {
         difficulty: this.difficulty
       }
     });
+  }
+  selectTechnology(item: string) {
+    this.selectedTechnology = item;
+    this.showTechnology = false;
+  }
+
+  selectQuestionCount(item: number) {
+    this.questionCount = item;
+    this.showQuestionCount = false;
+  }
+
+  selectDifficulty(item: string) {
+    this.difficulty = item;
+    this.showDifficulty = false;
   }
 }

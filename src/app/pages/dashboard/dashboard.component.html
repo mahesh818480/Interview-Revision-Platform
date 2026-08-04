@@ -54,7 +54,8 @@
             <button (click)="previousCompany()"
                 class="previous_button w-10 h-10 md:w-12 md:h-12 rounded-full border-2 md:border-4"
                 [disabled]="companyIndex==0">
-                <mat-icon class="text-[18px] md:text-[24px]">chevron_left</mat-icon>
+                <i class="fa-solid fa-angle-left text-[18px] md:text-[24px]"></i>
+                <!-- <mat-icon class="text-[18px] md:text-[24px]">chevron_left</mat-icon> -->
             </button>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full px-4 md:px-8">
@@ -70,7 +71,9 @@
             </div>
             <button (click)="nextCompany()" class="next_button w-10 h-10 md:w-12 md:h-12 rounded-full border"
                 [disabled]="companyIndex >= companies.length - 4">
-                <mat-icon class="text-[18px] md:text-[24px]">chevron_right</mat-icon>
+                <!-- <mat-icon class="text-[18px] md:text-[24px]">chevron_right</mat-icon> -->
+                <i class="fa-solid fa-angle-right text-[18px] md:text-[24px]"></i>
+
             </button>
         </div>
     </div>

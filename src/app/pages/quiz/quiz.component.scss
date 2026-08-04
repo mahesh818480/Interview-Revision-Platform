@@ -1,6 +1,6 @@
 .quiz-select {
-    @apply w-full h-14 rounded-xl border border-gray-300 px-4 outline-none bg-white;
-    transition: .3s;
+    @apply w-full h-12 sm:h-14 rounded-xl border border-gray-300 px-4 outline-none focus:border-red-500;
+
 }
 
 .quiz-select:focus {
@@ -8,14 +8,15 @@
     box-shadow: 0 0 0 3px rgba(239, 68, 68, .15);
 }
 
-.start-btn {
-    @apply w-full mt-10 h-14 rounded-xl text-white text-lg font-semibold;
-    background: #ef4444;
-    transition: .3s;
+.start-btn{
+    @apply w-full bg-red-500 hover:bg-red-600 text-white py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold transition;
 }
 
 .start-btn:hover {
     background: #dc2626;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(239, 68, 68, .3);
+}
+label{
+    @apply block mb-2 text-base sm:text-lg font-semibold text-slate-700;
 }

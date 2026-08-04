@@ -10,7 +10,7 @@ import { COMPANIES } from '../../data/company-data';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MatIconModule, RouterLink, MatButtonModule, CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
