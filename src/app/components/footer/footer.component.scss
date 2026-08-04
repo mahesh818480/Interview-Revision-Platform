@@ -39,13 +39,36 @@
 }
 
 .instagram:hover {
-    background: linear-gradient(45deg,
-            #f58529,
-            #dd2a7b,
-            #8134af,
-            #515bd4);
+    background: linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af,
+        #515bd4
+    );
 }
 
 .gmail:hover {
     background: #EA4335;
+}
+@media (max-width:768px){
+    .footer-title{
+        font-size:22px;
+        text-align:center;
+    }
+    .footer-link{
+        display:block;
+    }
+    .tech{
+        padding:6px 14px;
+        font-size:13px;
+    }
+    .social{
+        width:42px;
+        height:42px;
+          font-size:16px;
+    }
+}
+.footer_all_right{
+  @apply  border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm gap-3
 }

@@ -1,56 +1,58 @@
 <section class="min-h-screen bg-slate-50 py-10">
     <div class="max-w-5xl mx-auto px-5">
         <div class="text-center">
-            <h1 class="text-4xl font-bold text-gray-800">Interview <span class="text-red-600">Questions</span></h1>
-            <p class="mt-3 text-gray-500">Practice 100+ frontend interview questions.</p>
+            <h1 class="!text-2xl md:!text-5xl sm:text-4xl font-bold text-gray-800">
+                Interview <span class="text-red-600">Questions</span>
+            </h1>
+            <p class="mt-3 text-sm sm:text-base text-gray-500">
+                Practice 100+ frontend interview questions.
+            </p>
         </div>
         <div class="mt-8">
             <input type="text" [(ngModel)]="searchQuestion" (keyup)="onSearchQuestion()"
                 placeholder="Search Questions..."
-                class="w-full rounded-xl border border-gray-300 p-4 outline-none focus:border-red-500">
+                class="w-full h-12 sm:h-14 rounded-xl border border-gray-300 px-4 outline-none focus:border-red-500">
         </div>
-        <div class="flex flex-wrap gap-3 mt-8">
-            <button (click)="selectCategory('All')" [ngClass]="selectedTechnology == 'All' ? 'active':''"
-                class=" border px-5 py-2 rounded-full">
-                All</button>
-
-            @for(technology of technologies; track technology.name;){
+        <div class="flex flex-wrap gap-2 sm:gap-3 mt-8">
+            <button (click)="selectCategory('All')" [ngClass]="selectedTechnology=='All' ? 'active':''"
+                class="border px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base">
+                All
+            </button>
+            @for(technology of technologies; track technology.name){
             <button (click)="selectCategory(technology.name)"
-                class="hover:bg-red-500 hover:text-white border px-5 py-2 rounded-full"
-                [ngClass]="technology.name == selectedTechnology?'active':''">
+                [ngClass]="technology.name==selectedTechnology ? 'active':''"
+                class="border px-4 sm:px-5 py-2 rounded-full hover:bg-red-500 hover:text-white text-sm sm:text-base">
                 {{technology.name}}
             </button>
             }
         </div>
-
         @if(filteredQuestions.length === 0){
         <div class="text-center py-20">
-            <i class="fa-solid fa-magnifying-glass text-6xl text-gray-300"></i>
-            <h2 class="text-2xl font-bold mt-6">No Questions Found</h2>
+            <i class="fa-solid fa-magnifying-glass text-5xl sm:text-6xl text-gray-300"></i>
+            <h2 class="!text-2xl md:!text-5xl sm:text-2xl font-bold mt-6">No Questions Found</h2>
             <p class="text-gray-500 mt-3">Try another keyword.</p>
         </div>
         }@else{
         <div class="mt-8">
             @for(question of paginatedQuestions; track question.id){
             <div
-                class="flex justify-between items-center bg-white rounded-xl border p-5 mb-4 hover:border-red-500 hover:shadow transition">
-                <div>
-                    <h3 class="text-xl font-semibold">{{question.title}}</h3>
-                    <div class="flex gap-3 mt-3">
-                        <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-sm">
-                            {{question.technology}}</span>
-                        <span class="text-gray-400">|</span>
-                        <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full" [ngClass]="{
-                            'bg-green-100 text-green-700': question.difficulty === 'Easy',
-                            'bg-yellow-100 text-yellow-700': question.difficulty === 'Medium',
-                            'bg-red-100 text-red-700': question.difficulty === 'Hard'
-                            }">
-                            {{question.difficulty}}
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 bg-white rounded-xl border p-4 sm:p-5 mb-4 hover:border-red-500 hover:shadow transition">
+                <div class="flex-1">
+                    <h3 class="!text-2xl md:!text-4xl sm:text-xl font-semibold leading-7">{{question.title}}
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs sm:text-sm">
+                            {{question.technology}}
                         </span>
+                        <span class="px-3 py-1 rounded-full text-xs sm:text-sm" [ngClass]="{
+                'bg-green-100 text-green-700':question.difficulty==='Easy',
+                'bg-yellow-100 text-yellow-700':question.difficulty==='Medium',
+                'bg-red-100 text-red-700':question.difficulty==='Hard'
+                }">{{question.difficulty}}</span>
                     </div>
                 </div>
-                <button class="w-10 h-10 rounded-full bg-gray-100 hover:bg-red-500 hover:text-white transition"
-                    [routerLink]="['/questions-details',question.id]">
+                <button [routerLink]="['/questions-details',question.id]"
+                    class="w-10 h-10 rounded-full bg-gray-100 hover:bg-red-500 hover:text-white transition self-end sm:self-center flex justify-center items-center">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -58,22 +60,20 @@
         </div>
         }
         @if(filteredQuestions.length !== 0){
-        <div class="flex justify-center items-center gap-2 mt-10">
-            <button (click)="previousPage()" [disabled]="currentPage===1" class="px-4 py-2 rounded border
-                disabled:opacity-40
-                disabled:cursor-not-allowed
-                hover:bg-red-500 hover:text-white">Previous</button>
-            @for(page of pageNumbers; track page){
-            <button (click)="currentPage=page" class="w-10 h-10 rounded" [ngClass]="
-                currentPage===page
-                ?'bg-red-500 text-white'
-                :'border hover:bg-red-500 hover:text-white'
-                ">{{page}}</button>
+        <div class="flex flex-wrap justify-center items-center gap-2 mt-10">
+            <button (click)="previousPage()" [disabled]="currentPage===1"
+                class="px-3 sm:px-4 py-2 text-sm sm:text-base rounded border disabled:opacity-40 disabled:cursor-not-allowed hover:bg-red-500 hover:text-white">Previous
+            </button>
+            @for(page of pageNumbers;track page){
+            <button (click)="currentPage=page" class="w-9 h-9 sm:w-10 sm:h-10 rounded"
+                [ngClass]="currentPage===page ? 'bg-red-500 text-white' : 'border hover:bg-red-500 hover:text-white'">
+                {{page}}
+            </button>
             }
-            <button (click)="nextPage()" [disabled]="currentPage===totalPages" class="px-4 py-2 rounded border
-                    disabled:opacity-40
-                    disabled:cursor-not-allowed
-                    hover:bg-red-500 hover:text-white">Next</button>
+            <button (click)="nextPage()" [disabled]="currentPage===totalPages"
+                class="px-3 sm:px-4 py-2 text-sm sm:text-base rounded border disabled:opacity-40 disabled:cursor-not-allowed hover:bg-red-500 hover:text-white">
+                Next
+            </button>
         </div>
         }
     </div>
