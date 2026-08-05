@@ -20,11 +20,20 @@ export class QuestionDetailsComponent {
   ) { }
 
   ngOnInit() {
-    const id: any = Number(this.route.snapshot.paramMap.get('id'));
-    this.question = this.questionService.getQuestionById(id);
+    const technology = this.route.snapshot.paramMap.get('technology')!;
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.question = this.questionService.getQuestionById(
+      technology,
+      id
+    );
   }
   goToQuestioPage() {
-    this.router.navigate(['/questions'])
+    // this.router.navigate(['/questions'])
+    this.router.navigate(['/questions'], {
+      queryParams: {
+        technology: this.route.snapshot.queryParamMap.get('technology')
+      }
+    });
   }
   copyCode() {
     navigator.clipboard.writeText(this.question.code);

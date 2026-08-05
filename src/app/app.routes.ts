@@ -24,7 +24,7 @@ export const routes: Routes = [
         component: QuizComponent
     },
     {
-        path: 'questions-details/:id',
+        path: 'questions-details/:technology/:id',
         component: QuestionDetailsComponent
     },
     {

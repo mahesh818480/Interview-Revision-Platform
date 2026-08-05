@@ -1,4 +1,4 @@
-import { Question, Quiz } from "../models/question";
+import { Quiz } from "../models/question";
 
 export const RXJS_QUIZ_QUESTIONS: Quiz[] = [
     {

@@ -26,7 +26,7 @@ export class DashboardComponent {
     this.itemsPerPage = window.innerWidth < 768 ? 2 : 4;
   }
   ngOnInit() {
-    this.questions = this.questionService.getQuestions().slice(0, 4);
+    this.questions = this.questionService.getAllQuestions().slice(0, 4);
     this.technologies = this.questionService.getTechnologys();
     if (isPlatformBrowser(this.platformId)) {
       this.updateItemsPerPage();
@@ -45,10 +45,10 @@ export class DashboardComponent {
     }
   }
 
-get visibleCompanies() {
-  return this.companies.slice(
-    this.companyIndex,
-    this.companyIndex + this.itemsPerPage
-  );
-}
+  get visibleCompanies() {
+    return this.companies.slice(
+      this.companyIndex,
+      this.companyIndex + this.itemsPerPage
+    );
+  }
 }
