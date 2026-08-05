@@ -39,36 +39,129 @@
 }
 
 .instagram:hover {
-    background: linear-gradient(
-        45deg,
-        #f58529,
-        #dd2a7b,
-        #8134af,
-        #515bd4
-    );
+    background: linear-gradient(45deg,
+            #f58529,
+            #dd2a7b,
+            #8134af,
+            #515bd4);
 }
 
 .gmail:hover {
     background: #EA4335;
 }
-@media (max-width:768px){
-    .footer-title{
-        font-size:22px;
-        text-align:center;
-    }
-    .footer-link{
-        display:block;
-    }
-    .tech{
-        padding:6px 14px;
-        font-size:13px;
-    }
-    .social{
-        width:42px;
-        height:42px;
-          font-size:16px;
-    }
+
+.footer_all_right {
+    @apply border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm gap-3;
 }
-.footer_all_right{
-  @apply  border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm gap-3
+
+@media (max-width:768px) {
+
+    .footer-title {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "about about"
+            "quick contact"
+            "tech tech";
+        gap: 18px;
+    }
+
+    .footer-grid>div:first-child {
+        grid-area: about;
+        text-align: center;
+    }
+
+    .quick-links {
+        grid-area: quick;
+    }
+
+    .contact-section {
+        grid-area: contact;
+    }
+
+    .technologies-section {
+        grid-area: tech;
+    }
+
+    .quick-links,
+    .contact-section,
+    .technologies-section,
+    .connect-section {
+        position: relative;
+        overflow: hidden;
+        background: #111827;
+        border: 1px solid rgba(255, 255, 255, .10);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+    }
+
+    .quick-links::before,
+    .contact-section::before,
+    .technologies-section::before,
+    .connect-section::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        top: -60px;
+        left: -60px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgb(225 25 61 / 97%), #d61f1f);
+        filter: blur(35px);
+        opacity: .35;
+    }
+
+    .footer-link {
+        display: block;
+        text-align: center;
+        //padding: 8px 0;
+    }
+
+    .quick-links ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .quick-links ul li:last-child {
+        border-bottom: none;
+    }
+
+    .quick-links ul li:hover {
+        background: rgba(255, 55, 0, .08);
+        border-radius: 8px;
+    }
+
+    .contact-section .flex {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .contact-section span {
+        font-size: 14px;
+    }
+
+    .tech {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+
+    .social {
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
+    }
+
+    .connect-section {
+        margin-top: 20px;
+    }
+
+    .footer_all_right {
+        text-align: center;
+    }
 }
