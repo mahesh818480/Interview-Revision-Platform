@@ -3,12 +3,15 @@
 }
 
 .overlay {
-    @apply w-full h-full bg-[linear-gradient(90deg,rgba(17,24,39,0.88),rgba(17,24,39,0.55),rgba(17,24,39,0.25))] flex items-center;
+    @apply w-full h-full flex items-center;
+    background: linear-gradient(90deg, rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.55), rgba(17, 24, 39, 0.25));
 }
-.primary-btn{
-    @apply hover:bg-[#ed0606] hover:border-[#ed0606] bg-[#ec472a15] text-white py-[15px] px-[35px] rounded-[8px] border-2 border-white text-[16px] transition-all duration-300
+
+.primary-btn {
+    @apply hover:bg-[#ed0606] hover:border-[#ed0606] bg-[#ec472a15] text-white py-[15px] px-[35px] rounded-[8px] border-2 border-white text-[16px] transition-all duration-300;
 }
-.secondary-btn{
+
+.secondary-btn {
     @apply bg-transparent text-white border-2 border-white py-[15px] px-[35px] rounded-[8px] cursor-pointer hover:bg-[#ed0606] hover:border-[#ed0606]
 }
 
@@ -22,7 +25,7 @@
 
 
 .tech-item {
-    @apply min-w-[220px] text-center mr-[25px] p-[20px] border border-transparent rounded-[12px] transition-all duration-[350ms] cursor-pointer;
+    @apply shrink-0 mt-[10px] hover:border-red-400 min-w-[220px] mr-[24px] p-[20px] text-center rounded-[12px] border border-transparent transition-all duration-[350ms] cursor-pointer bg-white;
 }
 
 @keyframes scrollLeft {
@@ -126,10 +129,6 @@
         font-size: 15px;
     }
 
-    .marquee {
-        animation: scrollLeft 25s linear infinite;
-    }
-
     .prequently_questions {
         .title_names {
             font-size: 10px;
@@ -143,5 +142,42 @@
 
     .technologies_practice p {
         font-size: 15px;
+    }
+
+    .marquee {
+        animation-duration: 25s;
+    }
+
+    .tech-item {
+        min-width: 150px;
+        margin-top: 9px;
+        padding: 16px;
+        margin-right: 16px;
+    }
+
+    .tech-item h3 {
+        font-size: 30px;
+    }
+
+    .tech-item p {
+        font-size: 15px;
+    }
+}
+
+.marquee {
+    animation: scrollLeft 18s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
     }
 }
