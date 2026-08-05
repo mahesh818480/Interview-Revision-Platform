@@ -1,4 +1,32 @@
 <app-navbar></app-navbar>
+<div class="w-[120px] h-[120px] fixed top-[20%] left-[15%] z-[9999] [filter:contrast(1.05)]">
+  <svg viewBox="0 0 320 320">
+      <circle cx="160" cy="160" r="165" class="fill-none stroke-[rgb(34_34_34/10%)] stroke-[7] stroke-linecap-round"/>
+      <circle cx="160" cy="160" r="115" class="fill-none stroke-[rgb(34_34_34/10%)] stroke-[5] [stroke-dasharray:18_10]"/>
+      <defs>
+          <path id="circleText"
+              d="M160,160
+              m-130,0
+              a130,130 0 1,1 260,0
+              a130,130 0 1,1 -260,0"/>
+      </defs>
+
+      <text class="fill-[rgb(34_34_34/10%)] text-[39px] font-bold">
+          <textPath
+              href="#circleText"
+              startOffset="55%"
+              text-anchor="middle">
+              ★ MAHESH ★ FRONTEND DEVELOPER ★ 
+          </textPath>
+      </text>
+
+  </svg>
+
+  <div class="absolute inset-0 flex justify-center items-center text-[70px] font-bold text-[rgb(34_34_34/10%)] [font-family:auto]">
+      M
+  </div>
+
+</div>
 
 <router-outlet></router-outlet>
 

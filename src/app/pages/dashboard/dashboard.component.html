@@ -1,7 +1,8 @@
 <section class="hero">
     <div class="overlay">
         <div class="hero-content w-[90%] pl-[80px] max-w-[1200px] mx-auto text-white">
-            <h1 class="text-[60px] !font-extrabold leading-[1.1] [text-shadow:1px_2px_#F44336]">Ace Your <br>Frontend Interviews</h1>
+            <h1 class="text-[60px] !font-extrabold leading-[1.1] [text-shadow:1px_2px_#F44336]">Ace Your <br>Frontend
+                Interviews</h1>
             <p class="mt-5 w-[550px] text-[18px] text-[#ddd] leading-[1.6]">
                 Practice Angular, JavaScript, TypeScript,
                 HTML, CSS and RxJS interview questions
@@ -29,13 +30,23 @@
             </p>
         </div>
         <div class="overflow-hidden">
-            <div class="marquee flex w-max">
-                @for(question of technologies; track question.name){
-                <div class="tech-item hover:border-red-500 hover:bg-white hover:scale-[0.8] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
-                    <h3 class="text-[#ef4444] text-[42px] font-bold">{{question.count}}+</h3>
-                    <p class="mt-[10px] text-[18px] font-semibold text-[#374151]">{{question.name}}</p>
+            <div class="overflow-hidden w-full relative">
+                <div class="marquee flex w-max">
+                    @for(question of technologies; track question.name){
+                    <div
+                        class="tech-item hover:border-red-500 hover:bg-white hover:scale-[0.8] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
+                        <h3 class="text-[#ef4444] text-[42px] font-bold">{{question.count}}+</h3>
+                        <p class="mt-[10px] text-[18px] font-semibold text-[#374151]">{{question.name}}</p>
+                    </div>
+                    }
+                    @for(question of technologies; track 'copy-' + question.name){
+                    <div
+                        class="tech-item hover:border-red-500 hover:bg-white hover:scale-[0.8] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
+                        <h3 class="text-[#ef4444] text-[42px] font-bold">{{question.count}}+</h3>
+                        <p class="mt-[10px] text-[18px] font-semibold text-[#374151]">{{question.name}}</p>
+                    </div>
+                    }
                 </div>
-                }
             </div>
         </div>
     </div>
