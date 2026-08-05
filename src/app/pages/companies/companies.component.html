@@ -24,7 +24,7 @@
         @else{
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
             @for(company of paginatedCompanies;track company.id){
-            <div class="company-card">
+            <div class="company-card hover:border-red-500 hover:-translate-y-1.5 hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] transition-all duration-300">
                 <div class="flex justify-between items-start">
                     <div
                         class="w-12 h-12 md:w-14 md:h-14 rounded-xl border bg-white flex items-center justify-center p-2">
@@ -37,7 +37,7 @@
                         <p class="text-xs text-gray-400">Questions</p>
                     </div>
                 </div>
-                <h2 class="company_name text-xl md:text-2xl font-bold mt-4">{{company.name}}</h2>
+                <h2 class="company_name text-[rgb(30_41_59/58%)] hover:text-[#000] transition-colors duration-200 text-xl md:text-2xl font-bold mt-4">{{company.name}}</h2>
                 <div class="flex flex-wrap gap-2 mt-4">
                     @for(tech of company.technologies;track tech){
                     <span class="tech-chip">{{tech}}</span>

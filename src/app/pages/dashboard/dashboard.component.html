@@ -1,13 +1,13 @@
 <section class="hero">
     <div class="overlay">
-        <div class="hero-content">
-            <h1>Ace Your <br>Frontend Interviews</h1>
-            <p>
+        <div class="hero-content w-[90%] pl-[80px] max-w-[1200px] mx-auto text-white">
+            <h1 class="text-[60px] !font-extrabold leading-[1.1] [text-shadow:1px_2px_#F44336]">Ace Your <br>Frontend Interviews</h1>
+            <p class="mt-5 w-[550px] text-[18px] text-[#ddd] leading-[1.6]">
                 Practice Angular, JavaScript, TypeScript,
                 HTML, CSS and RxJS interview questions
                 asked by top companies.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons mt-[30px] flex gap-[20px]">
                 <button class="primary-btn" routerLink="/questions">
                     Browse Questions
                     <span><i class="fa-solid fa-arrow-right"></i></span>
@@ -17,7 +17,7 @@
         </div>
     </div>
 </section>
-<section class="py-10 bg-slate-100 technologies_practice">
+<section class="py-10 bg-[#eff3f8a8] technologies_practice">
 
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-10">
@@ -29,18 +29,18 @@
             </p>
         </div>
         <div class="overflow-hidden">
-            <div class="marquee">
+            <div class="marquee flex w-max">
                 @for(question of technologies; track question.name){
-                <div class="tech-item">
-                    <h3>{{question.count}}+</h3>
-                    <p>{{question.name}}</p>
+                <div class="tech-item hover:border-red-500 hover:bg-white hover:scale-[0.8] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
+                    <h3 class="text-[#ef4444] text-[42px] font-bold">{{question.count}}+</h3>
+                    <p class="mt-[10px] text-[18px] font-semibold text-[#374151]">{{question.name}}</p>
                 </div>
                 }
             </div>
         </div>
     </div>
 </section>
-<section class="companies py-16 bg-whitesmoke">
+<section class="companies py-16 bg-[whitesmoke]">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
             <h2 class="!text-2xl md:!text-5xl font-bold text-slate-800">
@@ -55,12 +55,11 @@
                 class="previous_button w-10 h-10 md:w-12 md:h-12 rounded-full border-2 md:border-4"
                 [disabled]="companyIndex==0">
                 <i class="fa-solid fa-angle-left text-[18px] md:text-[24px]"></i>
-                <!-- <mat-icon class="text-[18px] md:text-[24px]">chevron_left</mat-icon> -->
             </button>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full px-4 md:px-8">
                 @for(company of visibleCompanies; track company.name){
-                <div class="company_card p-5 md:p-6 w-full" routerLink="/companies">
+                <div class="company_card p-5 md:p-6 w-full min-h-[170px]" routerLink="/companies">
                     <img [src]="company.image" class="w-12 h-12 md:w-16 md:h-16 mx-auto object-contain">
                     <h3 class="mt-4 text-xl md:text-2xl font-bold text-center">{{company.name}}</h3>
                     <p class="mt-2 text-sm md:text-base text-red-600 font-semibold">{{company.questions}}+ Questions
@@ -71,14 +70,13 @@
             </div>
             <button (click)="nextCompany()" class="next_button w-10 h-10 md:w-12 md:h-12 rounded-full border"
                 [disabled]="companyIndex >= companies.length - 4">
-                <!-- <mat-icon class="text-[18px] md:text-[24px]">chevron_right</mat-icon> -->
                 <i class="fa-solid fa-angle-right text-[18px] md:text-[24px]"></i>
 
             </button>
         </div>
     </div>
 </section>
-<section class="prequently_questions py-16 bg-aliceblue">
+<section class="prequently_questions py-16 bg-[aliceblue]">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12">
             <h3 class="!text-2xl md:!text-5xl font-bold text-slate-800">
