@@ -1,6 +1,6 @@
 <footer class="bg-[#111827] text-gray-300 mt-20">
     <div class="max-w-7xl mx-auto px-5 md:px-6 py-10 md:py-14">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
+        <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
             <div>
                 <div class="flex justify-center sm:justify-start">
                     <h2 class="footer-title">
@@ -13,9 +13,9 @@
                     asked by top companies.
                 </p>
             </div>
-            <div>
+            <div class="quick-links">
                 <h3 class="footer-title text-center sm:text-left">
-                    Quick Links
+                    <span class="text-red-600">Quick</span> Links
                 </h3>
                 <ul class="space-y-3 mt-4 md:mt-6 text-center sm:text-left">
                     <li><a routerLink="/" class="footer-link">Dashboard</a></li>
@@ -24,17 +24,17 @@
                     <li><a routerLink="/quiz" class="footer-link">Quiz</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="technologies-section">
                 <h3 class="footer-title text-center sm:text-left">
-                    Technologies
+                    Techno<span class="text-red-600">logies</span>
                 </h3>
-                <div class="flex flex-wrap justify-center sm:justify-start gap-2 md:gap-3 mt-4 md:mt-6">
+                <div class="flex flex-wrap sm:justify-start gap-2 md:gap-3 mt-4 md:mt-6">
                     @for(techno of technologies; track techno.name){
                     <span class="tech">{{techno.name}}</span>
                     }
                 </div>
             </div>
-            <div>
+            <div class="contact-section">
                 <h3 class="footer-title text-center sm:text-left">
                     Contact
                 </h3>
@@ -55,7 +55,10 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-700 mt-12 pt-8">
+        <div class="connect-section border-t border-gray-700 mt-12 pt-8">
+            <h3 class="footer-title text-center mb-6">
+                Connect<span class="text-red-600"> With Me</span>
+            </h3>
             <div class="flex flex-wrap justify-center gap-3 md:gap-5">
                 <a href="#" class="social linkedin">
                     <i class="fab fa-linkedin-in"></i>
@@ -74,8 +77,7 @@
                 </a>
             </div>
         </div>
-        <div
-            class="footer_all_right">
+        <div class="footer_all_right">
             <p class="text-gray-400 text-center">
                 © 2026 InterviewHub. All Rights Reserved.
             </p>
