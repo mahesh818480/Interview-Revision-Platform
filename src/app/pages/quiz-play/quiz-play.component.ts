@@ -3,8 +3,8 @@ import { QUIZ_DATA } from '../../data/quiz-data';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Quiz } from '../../models/question';
-import { JAVASCRIPT_QUIZ_DATA } from '../../data/javaScript-data';
-import { RXJS_QUIZ_QUESTIONS } from '../../data/rxjs-data';
+import { JAVASCRIPT_QUIZ_DATA } from '../../data/javaScript-quiz-data';
+import { RXJS_QUIZ_QUESTIONS } from '../../data/rxjs-quiz-data';
 
 @Component({
   selector: 'app-quiz-play',
@@ -26,9 +26,7 @@ export class QuizPlayComponent {
       const technology = params['technology'];
       const difficulty = params['difficulty'];
       const count = +params['count'];
-
       let technologyQuestions: any[] = [];
-
       switch (technology) {
         case 'Angular':
           technologyQuestions = [...QUIZ_DATA];
@@ -44,12 +42,10 @@ export class QuizPlayComponent {
 
       }
 
-      // Selected difficulty
       let difficultyQuestions = technologyQuestions.filter(
         q => q.difficulty === difficulty
       );
 
-      // Other difficulties
       let otherQuestions = technologyQuestions.filter(
         q => q.difficulty !== difficulty
       );
